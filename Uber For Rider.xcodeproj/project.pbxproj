@@ -54,14 +54,38 @@
 		A0A0D6431E398F91003F9227 /* Uber For Rider */ = {
 			isa = PBXGroup;
 			children = (
+				A0A0D6581E399015003F9227 /* View */,
+				A0A0D6571E39900D003F9227 /* Model */,
+				A0A0D6561E399005003F9227 /* Controller */,
 				A0A0D6441E398F91003F9227 /* AppDelegate.swift */,
-				A0A0D6461E398F91003F9227 /* ViewController.swift */,
 				A0A0D6481E398F91003F9227 /* Main.storyboard */,
 				A0A0D64B1E398F91003F9227 /* Assets.xcassets */,
 				A0A0D64D1E398F91003F9227 /* LaunchScreen.storyboard */,
 				A0A0D6501E398F91003F9227 /* Info.plist */,
 			);
 			path = "Uber For Rider";
+			sourceTree = "<group>";
+		};
+		A0A0D6561E399005003F9227 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A0A0D6461E398F91003F9227 /* ViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		A0A0D6571E39900D003F9227 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		A0A0D6581E399015003F9227 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
