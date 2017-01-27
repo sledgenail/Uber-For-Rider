@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Sign InVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Uber_For_Rider" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="SignInVC" customModule="Uber_For_Rider" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -32,24 +32,30 @@
                                 <rect key="frame" x="40" y="107.5" width="295" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Password..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nzg-Tp-V8N">
                                 <rect key="frame" x="40" y="157.5" width="295" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
                             </textField>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="44l-OD-IeA">
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="44l-OD-IeA">
                                 <rect key="frame" x="76" y="207.5" width="223" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mdl-lR-Ye6">
-                                        <rect key="frame" x="0.0" y="0.0" width="42" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="111.5" height="30"/>
                                         <state key="normal" title="Log In"/>
+                                        <connections>
+                                            <action selector="logInBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Kf7-Bs-eki"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qvp-qO-dzV">
-                                        <rect key="frame" x="168" y="0.0" width="55" height="30"/>
+                                        <rect key="frame" x="111.5" y="0.0" width="111.5" height="30"/>
                                         <state key="normal" title="Sign Up"/>
+                                        <connections>
+                                            <action selector="signUpBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4Ql-En-WT5"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -70,15 +76,20 @@
                             <constraint firstItem="44l-OD-IeA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="60" id="stX-Vn-78K"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="icM-mg-6VJ" id="CqK-SD-a46"/>
+                        <outlet property="passwordTextField" destination="nzg-Tp-V8N" id="oPR-w6-Cri"/>
+                        <segue destination="s1y-pH-ySp" kind="show" identifier="RiderVC" id="jUv-AF-eAR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
         </scene>
-        <!--View Controller-->
+        <!--RiderVC-->
         <scene sceneID="QxU-jI-DgG">
             <objects>
-                <viewController id="s1y-pH-ySp" sceneMemberID="viewController">
+                <viewController id="s1y-pH-ySp" customClass="RiderVC" customModule="Uber_For_Rider" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Yy3-de-bFJ"/>
                         <viewControllerLayoutGuide type="bottom" id="mDQ-An-VNM"/>
@@ -91,40 +102,46 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <items>
                                     <navigationItem title="Rider" id="Moa-aK-xVo">
-                                        <barButtonItem key="leftBarButtonItem" title="Logout" id="ZHT-gc-4JR"/>
+                                        <barButtonItem key="leftBarButtonItem" title="Logout" id="ZHT-gc-4JR">
+                                            <connections>
+                                                <action selector="logOutBtnPressed:" destination="s1y-pH-ySp" id="jK6-N3-Avj"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="dkb-uz-MK0">
-                                <rect key="frame" x="0.0" y="72" width="375" height="375"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="375" id="7QA-kj-tpW"/>
-                                    <constraint firstAttribute="width" constant="375" id="phi-C2-OwA"/>
-                                </constraints>
+                                <rect key="frame" x="0.0" y="72" width="375" height="374"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WxF-AZ-EE1">
-                                <rect key="frame" x="140" y="507" width="95" height="31"/>
+                                <rect key="frame" x="152" y="486" width="71" height="31"/>
                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="17"/>
-                                <state key="normal" title="Cancel Uber"/>
+                                <state key="normal" title="Call Uber"/>
+                                <connections>
+                                    <action selector="callUberBtnPressed:" destination="s1y-pH-ySp" eventType="touchUpInside" id="o8f-KJ-6QQ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="WxF-AZ-EE1" firstAttribute="leading" secondItem="soS-hb-w6z" secondAttribute="leading" constant="140" id="5Ky-E9-Ohj"/>
-                            <constraint firstItem="dkb-uz-MK0" firstAttribute="leading" secondItem="soS-hb-w6z" secondAttribute="leading" id="LqP-vV-ln6"/>
-                            <constraint firstAttribute="trailing" secondItem="dkb-uz-MK0" secondAttribute="trailing" id="PP4-04-4iD"/>
+                            <constraint firstItem="WxF-AZ-EE1" firstAttribute="top" secondItem="dkb-uz-MK0" secondAttribute="bottom" constant="40" id="I5E-mE-G9P"/>
+                            <constraint firstItem="WxF-AZ-EE1" firstAttribute="centerX" secondItem="soS-hb-w6z" secondAttribute="centerX" id="KgZ-on-JTZ"/>
+                            <constraint firstAttribute="trailing" secondItem="dkb-uz-MK0" secondAttribute="trailing" id="NY2-gP-LuM"/>
                             <constraint firstItem="mjB-dT-5Wc" firstAttribute="top" secondItem="Yy3-de-bFJ" secondAttribute="bottom" constant="8" id="Y2v-tk-zmb"/>
+                            <constraint firstItem="dkb-uz-MK0" firstAttribute="top" secondItem="mjB-dT-5Wc" secondAttribute="bottom" id="bzo-MF-ggX"/>
                             <constraint firstAttribute="trailing" secondItem="mjB-dT-5Wc" secondAttribute="trailing" id="cQE-qo-kda"/>
-                            <constraint firstItem="dkb-uz-MK0" firstAttribute="top" secondItem="mjB-dT-5Wc" secondAttribute="bottom" id="dI6-Ep-MNc"/>
-                            <constraint firstAttribute="trailing" secondItem="WxF-AZ-EE1" secondAttribute="trailing" constant="140" id="pZD-0I-C9b"/>
-                            <constraint firstItem="WxF-AZ-EE1" firstAttribute="top" secondItem="dkb-uz-MK0" secondAttribute="bottom" constant="60" id="v7r-SK-p5f"/>
+                            <constraint firstItem="dkb-uz-MK0" firstAttribute="leading" secondItem="soS-hb-w6z" secondAttribute="leading" id="dsR-bc-Yyq"/>
+                            <constraint firstItem="mDQ-An-VNM" firstAttribute="top" secondItem="WxF-AZ-EE1" secondAttribute="bottom" constant="150" id="fYA-jx-9K2"/>
                             <constraint firstItem="mjB-dT-5Wc" firstAttribute="leading" secondItem="soS-hb-w6z" secondAttribute="leading" id="wat-OU-92g"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="myMap" destination="dkb-uz-MK0" id="V4W-x3-61E"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5TO-FC-NuK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="829.60000000000002" y="138.98050974512745"/>
+            <point key="canvasLocation" x="951" y="139"/>
         </scene>
     </scenes>
 </document>
