@@ -18,6 +18,7 @@
 		A0A0D65C1E3A0BD7003F9227 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A0A0D65B1E3A0BD7003F9227 /* GoogleService-Info.plist */; };
 		A0AEE67F1E3B9C1C000725E1 /* DBProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AEE67E1E3B9C1C000725E1 /* DBProvider.swift */; };
 		A0AEE6811E3B9D00000725E1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AEE6801E3B9D00000725E1 /* Constants.swift */; };
+		A0AEE6881E3BB6F3000725E1 /* UberHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AEE6871E3BB6F3000725E1 /* UberHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		A0A0D65B1E3A0BD7003F9227 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A0AEE67E1E3B9C1C000725E1 /* DBProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBProvider.swift; sourceTree = "<group>"; };
 		A0AEE6801E3B9D00000725E1 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		A0AEE6871E3BB6F3000725E1 /* UberHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UberHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				A07563431E3A537500735D81 /* AuthProvider.swift */,
 				A0AEE67E1E3B9C1C000725E1 /* DBProvider.swift */,
 				A0AEE6801E3B9D00000725E1 /* Constants.swift */,
+				A0AEE6871E3BB6F3000725E1 /* UberHandler.swift */,
 			);
 			name = Plugins;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 				A0A0D6471E398F91003F9227 /* SignInVC.swift in Sources */,
 				A0AEE67F1E3B9C1C000725E1 /* DBProvider.swift in Sources */,
 				A0A0D6451E398F91003F9227 /* AppDelegate.swift in Sources */,
+				A0AEE6881E3BB6F3000725E1 /* UberHandler.swift in Sources */,
 				A0320BD41E3ABF1300988880 /* RiderVC.swift in Sources */,
 				A0AEE6811E3B9D00000725E1 /* Constants.swift in Sources */,
 			);

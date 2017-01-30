@@ -33,6 +33,9 @@ class SignInVC: UIViewController {
                 if message != nil {
                     self.alertTheUser(title: "Problem With Authentication", message: message!)
                 } else {
+                    UberHandler.Instance.rider = self.emailTextField.text!
+                    self.emailTextField.text = ""
+                    self.passwordTextField.text = ""
                     self.performSegue(withIdentifier: self.RIDER_SEGUE, sender: nil)
                 }
             })
@@ -49,6 +52,9 @@ class SignInVC: UIViewController {
                 if message != nil {
                     self.alertTheUser(title: "Problem Creating Account", message: message!)
                 } else {
+                    UberHandler.Instance.rider = self.emailTextField.text!
+                    self.emailTextField.text = ""
+                    self.passwordTextField.text = ""
                     self.performSegue(withIdentifier: self.RIDER_SEGUE, sender: nil)
                 }
             })
